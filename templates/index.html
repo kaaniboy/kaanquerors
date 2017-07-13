@@ -25,6 +25,7 @@
       padding-top: 20px;
 	  min-height: 100%;
       background-color: #f1f1f1;
+	  margin-left: 25%;
     }
     
     /* Set black background color, white text and some padding */
@@ -58,7 +59,8 @@
 	}
 	.sidebar {
 		height: 100%;
-		background-color: #002663
+		background-color: #002663;
+		position: fixed;
 	}
 	
 	.form-control {
@@ -75,11 +77,14 @@
 	.amex {
 		margin-top: 20px;
 	}
+	
+	#fidget-spinner {
+		z-index: 999;
+		position: fixed;
+	}
   </style>
 </head>
 <body>	
-
-  
 <div class="container-fluid">    
   <div class="row content">
     <div class="col-sm-3 text-left sidebar">
@@ -102,8 +107,11 @@
     <div class="col-sm-9 sidenav">
         <ul id="resultsList" class="list-group">
         </ul>
+		<div id="fidget-spinner" class="text-center" style="display: none;">
+			<img src="https://cdn.dribbble.com/users/729829/screenshots/3468434/galshir-spinner.gif">
+		</div>
     </div>
-  </div>
+</div>
 </div>
 </body>
 </html>

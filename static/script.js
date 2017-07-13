@@ -1,6 +1,16 @@
 $(document).ready(function () {
 	console.log('Test!');
 	
+	$(document).ajaxStart(function () {
+		$('#fidget-spinner').css('display', 'block');
+		$('#resultsList').css('display', 'none');
+	});
+	
+	$(document).ajaxStop(function () {
+		$('#fidget-spinner').css('display', 'none');
+		$('#resultsList').css('display', 'block');
+	});
+	
 	$('#btn').click(function () {
 		var school = $('#search').val() || 'Arizona State University';
 		console.log('School: ' + encodeURIComponent(school));
