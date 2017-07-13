@@ -29,7 +29,9 @@ def get_profiles():
             'avatar_url': user.avatar_url,
             'url': user.url,
             'contributions': user.contributions,
-            'followers': user.followers
+            'followers': user.followers,
+			'repos': user.public_repos,
+			'login': user.login
         }
         
         results.append(item)
@@ -38,8 +40,10 @@ def get_profiles():
         'name': 'Kaan Aksoy',
         'email': 'kaanaksoyaz@gmail.com',
         'avatar_url': 'https://avatars2.githubusercontent.com/u/2722074?v=3&s=460',
+		'repos': 9001,
         'contributions': 9001,
-        'followers': 9001
+        'followers': 9001,
+		'login': 'kaaniboy'
     })
     
     results.sort(key=lambda x: x['followers'], reverse=True)

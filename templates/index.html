@@ -5,27 +5,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
   <style>
     h1 {
-        color: #cccccc;
+		color: white;
         text-align: center;
+		font-family: 'Roboto', sans-serif;
     }
-  
-    .search {
-      margin-left: ;
-    }
+	
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 1000px}
     
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
+	  min-height: 100%;
       background-color: #f1f1f1;
-      height: 100%;
     }
     
     /* Set black background color, white text and some padding */
@@ -47,6 +46,35 @@
 	.img-circle {
 		margin-right: 10px;
 	}
+	
+	.btn-primary {
+		background-color: rgba(255, 255, 255, .25);
+		border-color: rgba(255, 255, 255, 0.65);
+		margin-left: 5px;
+		border: none;
+	}
+	hr {
+		border-top: 1px solid rgba(255,255,255,.7);
+	}
+	.sidebar {
+		height: 100%;
+		background-color: #002663
+	}
+	
+	.form-control {
+		border: none;
+		color: white;
+		background-color: rgba(255, 255, 255, .11);
+	}
+	
+	#summary {
+		color: rgba(255, 255, 255, .8);
+		padding: 20px;
+	}
+	
+	.amex {
+		margin-top: 20px;
+	}
   </style>
 </head>
 <body>	
@@ -54,27 +82,28 @@
   
 <div class="container-fluid">    
   <div class="row content">
-    <div class="col-sm-3 text-left"> 
-		<h1>Student Express</h1>
+    <div class="col-sm-3 text-left sidebar">
+		<div class="text-center">
+			<img class="amex" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/American_Express_logo.svg/2000px-American_Express_logo.svg.png" width="90" height="90" alt="Visit American Express Homepage" class="amex-logo">
+		</div>
+		<h1>
+			Student Express
+		</h1>
 		<hr>
-		<div class="form-wrapper">
-			<input class="search" type="text" id="search" placeholder="Search for..." required>
+		<div class="form-wrapper form-inline text-center">
+			<input class="search form-control" type="text" id="search" placeholder="Find a university..." required>
 			<button type="button" id="btn" class="btn btn-primary">Search</button>
 		</div>
+		<p id="summary">
+			Allow recruiters to search for students from universities based on their open source contributions.
+			Recruiters can quickly sort through potential hires without being physically present.
+		</p>
     </div>
-    <div class="col-sm-8 sidenav">
+    <div class="col-sm-9 sidenav">
         <ul id="resultsList" class="list-group">
         </ul>
     </div>
   </div>
 </div>
-
-<div id="listTemplate" style="display: none;">
-	<li class="list-group-item">
-		[NAME]
-	</li>
-</div>
- 
-
 </body>
 </html>
