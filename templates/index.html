@@ -8,6 +8,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
   <style>
     h1 {
         color: #cccccc;
@@ -42,30 +43,38 @@
       }
       .row.content {height:auto;} 
     }
+	
+	.img-circle {
+		margin-right: 10px;
+	}
   </style>
 </head>
-<body>
+<body>	
 
   
-<div class="container-fluid text-center">    
+<div class="container-fluid">    
   <div class="row content">
     <div class="col-sm-3 text-left"> 
-      <h1>Student Express</h1>
-      <hr>
-      <form class="form-wrapper">
-        <input class="search" type="text" id="search" placeholder="Search for..." required>
-        <input class="search" type="submit" value="go" id="submit">
-    </form>
+		<h1>Student Express</h1>
+		<hr>
+		<div class="form-wrapper">
+			<input class="search" type="text" id="search" placeholder="Search for..." required>
+			<button type="button" id="btn" class="btn btn-primary">Search</button>
+		</div>
     </div>
     <div class="col-sm-8 sidenav">
-        <ul>
-          <li>Coffee</li>
-         <li>Tea</li>
-         <li>Milk</li>
+        <ul id="resultsList" class="list-group">
         </ul>
     </div>
   </div>
 </div>
+
+<div id="listTemplate" style="display: none;">
+	<li class="list-group-item">
+		[NAME]
+	</li>
+</div>
+ 
 
 </body>
 </html>
