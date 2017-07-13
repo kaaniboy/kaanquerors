@@ -31,6 +31,7 @@ def get_profiles():
             'contributions': user.contributions,
             'followers': user.followers,
 			'repos': user.public_repos,
+			'html_url': user.html_url,
 			'login': user.login
         }
         
@@ -43,7 +44,8 @@ def get_profiles():
 		'repos': 9001,
         'contributions': 9001,
         'followers': 9001,
-		'login': 'kaaniboy'
+		'login': 'kaaniboy',
+		'html_url': 'www.github.com/kaaniboy'
     })
     
     results.sort(key=lambda x: x['followers'], reverse=True)
