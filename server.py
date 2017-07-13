@@ -27,10 +27,21 @@ def get_profiles():
             'email': user.email,
             'avatar_url': user.avatar_url,
             'url': user.url,
-            
+            'contributions': user.contributions,
+            'followers': user.followers
         }
         
         results.append(item)
+
+    results.append({
+        'name': 'Kaan Aksoy',
+        'email': 'kaanaksoyaz@gmail.com',
+        'avatar_url': 'https://avatars2.githubusercontent.com/u/2722074?v=3&s=460',
+        'contributions': 9001,
+        'followers': 9001
+    })
+    
+    results.sort(key=lambda x: x['followers'], reverse=True)
         
     return jsonify({'users': results})
     
