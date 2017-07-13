@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import jsonify
 from flask import request
+from flask import render_template
 from github import Github
 from auth import getProxyURL, getUsername, getPassword
 import os
@@ -9,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Github Recruiter'
+    return render_template('index.html')
 
 @app.route('/get_profiles')
 def get_profiles():
