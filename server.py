@@ -15,7 +15,7 @@ def index():
 @app.route('/get_profiles')
 def get_profiles():
     school = request.args.get('school', '')
-    
+
     os.environ['HTTP_PROXY'] = getProxyURL()
 
     g = Github(getUsername(), getPassword())
@@ -34,7 +34,7 @@ def get_profiles():
 			'html_url': user.html_url,
 			'login': user.login
         }
-        
+
         results.append(item)
 
     results.append({
@@ -47,12 +47,11 @@ def get_profiles():
 		'login': 'kaaniboy',
 		'html_url': 'www.github.com/kaaniboy'
     })
-    
+
     results.sort(key=lambda x: x['followers'], reverse=True)
-        
+
     return jsonify({'users': results})
 
 if __name__ == '__main__':
-	port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-    
