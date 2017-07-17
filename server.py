@@ -51,9 +51,8 @@ def get_profiles():
     results.sort(key=lambda x: x['followers'], reverse=True)
         
     return jsonify({'users': results})
-    
 
-@app.route('/proxy')
-def get_proxy():
-    return getProxyURL()
+if __name__ == '__main__':
+	port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
     
