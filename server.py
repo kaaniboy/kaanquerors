@@ -3,7 +3,6 @@ from flask import jsonify
 from flask import request
 from flask import render_template
 from github import Github
-from auth import getProxyURL, getUsername, getPassword
 import os
 
 app = Flask(__name__)
@@ -16,9 +15,10 @@ def index():
 def get_profiles():
     school = request.args.get('school', '')
 
-    os.environ['HTTP_PROXY'] = getProxyURL()
+    username = os.environ.get('GITHUB_USERNAME')
+    password = os.environ.get('GITHUB_PASSWORD')
 
-    g = Github(getUsername(), getPassword())
+    g = Github(username, password)
 
     results = []
 
@@ -36,17 +36,6 @@ def get_profiles():
         }
 
         results.append(item)
-
-    results.append({
-        'name': 'Kaan Aksoy',
-        'email': 'kaanaksoyaz@gmail.com',
-        'avatar_url': 'https://avatars2.githubusercontent.com/u/2722074?v=3&s=460',
-		'repos': 9001,
-        'contributions': 9001,
-        'followers': 9001,
-		'login': 'kaaniboy',
-		'html_url': 'www.github.com/kaaniboy'
-    })
 
     results.sort(key=lambda x: x['followers'], reverse=True)
 
