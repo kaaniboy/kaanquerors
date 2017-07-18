@@ -40,7 +40,7 @@ $(document).ready(function () {
 					linkText = users[i].name;
 				}
 
-				html += '<a href="' + users[i].html_url + '">' + linkText + '</a>';
+				html += '<a target="_blank" href="' + users[i].html_url + '">' + linkText + '</a>';
 				html += '<span class="badge">Followers: ' + users[i].followers + '</span>';
 				html += '<span class="badge">Repos: ' + users[i].repos + '</span>';
 				html += '</li>';
