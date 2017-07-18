@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="{{ url_for('static', filename='script.js') }}"></script>
@@ -16,10 +16,10 @@
         text-align: center;
 		font-family: 'Roboto', sans-serif;
     }
-	
+
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 1000px}
-    
+
     /* Set gray background color and 100% height */
     .sidenav {
       padding-top: 20px;
@@ -27,27 +27,27 @@
       background-color: #f1f1f1;
 	  margin-left: 25%;
     }
-    
+
     /* Set black background color, white text and some padding */
     footer {
       background-color: #555;
       color: white;
       padding: 15px;
     }
-    
+
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
         padding: 15px;
       }
-      .row.content {height:auto;} 
+      .row.content {height:auto;}
     }
-	
+
 	.img-circle {
 		margin-right: 10px;
 	}
-	
+
 	.btn-primary {
 		background-color: rgba(255, 255, 255, .25);
 		border-color: rgba(255, 255, 255, 0.65);
@@ -62,22 +62,22 @@
 		background-color: #002663;
 		position: fixed;
 	}
-	
+
 	.form-control {
 		border: none;
 		color: white;
 		background-color: rgba(255, 255, 255, .11);
 	}
-	
+
 	#summary {
 		color: rgba(255, 255, 255, .8);
 		padding: 20px;
 	}
-	
+
 	.amex {
 		margin-top: 20px;
 	}
-	
+
 	#fidget-spinner {
 		z-index: 999;
 		position: fixed;
@@ -86,15 +86,15 @@
 		height: 10;
 		text-align: center;
 	}
-	
+
 	#fidget-spinner img {
 		width: 200px;
 		height: 200px;
 	}
   </style>
 </head>
-<body>	
-<div class="container-fluid">    
+<body>
+<div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 text-left sidebar">
 		<div class="text-center">
@@ -117,7 +117,7 @@
         <ul id="resultsList" class="list-group">
         </ul>
 		<div id="fidget-spinner" class="text-center" style="display: none;">
-			<img src="http://i.imgur.com/t25X4V8.gif">
+			<img src="https://i.imgur.com/t25X4V8.gif">
 		</div>
     </div>
 </div>
